@@ -18,11 +18,11 @@ for i in range (5,0, -1):
     x = input("Who are you? What is your username?" )
     p = getpass()
     #print(i) 
-    if loginDict.get(x) and loginDict[x] == p:
+   try: if loginDict.get(x) and loginDict[x] == p:
         print("access GRANTED!!!")
         #print(i)
         exit()
-    elif i != 1:
+    except: i != 1:
         print("something is not correct, try again", i-1 , "attempts left")
     else:
         print("too many attempts, access denied, goodbye")
