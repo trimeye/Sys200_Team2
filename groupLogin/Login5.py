@@ -4,7 +4,7 @@ import hashlib
 import logging
 import getpass
 import passlib
-#
+
 #DEBUG Detailed information, typically of interest only when diagnosing problems.
 #INFO Confirmation that things are working as expected.
 #WARNING An indication that something unexpected happened, or indicative of some problem in the near future (e.g. ‘disk space low’). still working as expected. **default setting**
