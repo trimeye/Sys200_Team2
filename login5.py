@@ -17,6 +17,8 @@ logging.basicConfig(filename="logging.log",filemode="a",format="%(asctime)s:%(le
 pwlist = {}
 username = {}
 
+try:
+
 with open('/home/travis/Desktop/pass.txt') as password_file:
     for line in password_file:
         username, password = line.partition(':')[::2]
@@ -44,4 +46,7 @@ if attempt >= 2:
 else:
     print("You have run out of log in attempts.")
     logging.debug("User: " + username + "locked out at #timedate.")
+    
+except:
+    print("Invalid Entry")
 
