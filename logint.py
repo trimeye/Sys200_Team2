@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 import hashlib
 import logging
@@ -24,20 +23,22 @@ except:
     print('Invalid File')
 
 for attempt in range (5,0,-1):
-   username = input("Please enter your username: ")
-   if(username in pwlist.keys()):
-       password = getpass.getpass()
-       if(password == pwlist[username]):
-           print('success!')
-           quit()
+    username = input("Please enter your username: ")
+    if(username in pwlist.keys()):
+        password = getpass.getpass()
+        if(password == pwlist[username]):
+            print('success!')
+            Complete = True
+            quit()
           
-if attempt >= 2:
-    print("Invalid Access Attempt")
-    print("You have", str(attempt-1), "attempts left.")
-    logging.debug("Unknown person attempted to login with invalid username.")
-else:
-    print("You have run out of log in attempts.")
-    logging.debug("User: " + username + "locked out at #timedate.")
+        elif attempt >= 2:
+            print("Invalid Access Attempt")
+            print("You have", str(attempt-1), "attempts left.")
+            logging.debug("Unknown person attempted to login with invalid username.")
+
+        else:
+            print("You have run out of log in attempts.")
+            logging.debug("User: " + username + "locked out at #timedate.")
 
 
 
